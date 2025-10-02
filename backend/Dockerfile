@@ -4,7 +4,10 @@ FROM php:8.2-apache
 # Installer les dépendances système et extensions PHP nécessaires
 RUN apt-get update && apt-get install -y \
     libzip-dev zip unzip git libonig-dev libxml2-dev \
-    && docker-php-ext-install pdo pdo_mysql zip mbstring bcmath xml \
+    # Ajout des dépendances et extensions pour PostgreSQL (libpq-dev et pdo_pgsql)
+    libpq-dev \
+    # Installation de pdo_pgsql EN PLUS de pdo_mysql
+    && docker-php-ext-install pdo pdo_mysql pdo_pgsql zip mbstring bcmath xml \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Installer Composer
