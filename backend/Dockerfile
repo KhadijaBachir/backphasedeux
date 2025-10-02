@@ -4,6 +4,8 @@ FROM php:8.2-apache
 # Installer les dépendances système et extensions PHP nécessaires
 RUN apt-get update && apt-get install -y \
     libzip-dev zip unzip git libonig-dev libxml2-dev \
+    # AJOUT ESSENTIEL : libpq-dev pour l'extension PostgreSQL
+    libpq-dev \ 
     && docker-php-ext-install pdo pdo_pgsql zip mbstring bcmath xml \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
@@ -19,9 +21,7 @@ COPY . .
 # Installer les dépendances PHP du projet
 RUN composer install --optimize-autoloader --no-dev
 
-# 💡 AJOUT CLÉ : Exécuter les migrations PostgreSQL
-# L'utilisation de --force est essentielle en environnement de production.
-# L'exécution ici garantit que les tables existent avant le démarrage du serveur.
+# L'exécution des migrations (qui a maintenant l'extension nécessaire)
 RUN php artisan migrate --force
 
 # Définir les permissions pour Laravel
