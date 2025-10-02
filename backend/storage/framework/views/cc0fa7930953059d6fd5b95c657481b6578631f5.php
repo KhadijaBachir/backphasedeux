@@ -130,4 +130,4 @@
         </div>
     </body>
 </html>
-<?php /**PATH C:\Users\Dell\Documents\Modèles Office personnalisés\OneDrive\Bureau\deploiement\PhaseDeux\backend\resources\views\welcome.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\Users\Dell\Documents\Modèles Office personnalisés\OneDrive\Bureau\back\backphasedeux\backend\resources\views\welcome.blade.php ENDPATH**/ ?>

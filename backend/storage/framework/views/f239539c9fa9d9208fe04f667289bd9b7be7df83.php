@@ -44,4 +44,4 @@
         </ul>
     </nav>
 <?php endif; ?>
-<?php /**PATH C:\Users\Dell\Documents\Modèles Office personnalisés\OneDrive\Bureau\deploiement\PhaseDeux\backend\vendor\laravel\framework\src\Illuminate\Pagination\resources\views\bootstrap-4.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\Users\Dell\Documents\Modèles Office personnalisés\OneDrive\Bureau\back\backphasedeux\backend\vendor\laravel\framework\src\Illuminate\Pagination\resources\views\bootstrap-4.blade.php ENDPATH**/ ?>

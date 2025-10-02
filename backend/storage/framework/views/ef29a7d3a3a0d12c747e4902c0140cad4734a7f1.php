@@ -88,4 +88,4 @@
 <?php $component = $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4; ?>
 <?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
 <?php endif; ?>
-<?php /**PATH C:\Users\Dell\Documents\Modèles Office personnalisés\OneDrive\Bureau\deploiement\PhaseDeux\backend\vendor\laravel\framework\src\Illuminate\Notifications\resources\views\email.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\Users\Dell\Documents\Modèles Office personnalisés\OneDrive\Bureau\back\backphasedeux\backend\vendor\laravel\framework\src\Illuminate\Notifications\resources\views\email.blade.php ENDPATH**/ ?>

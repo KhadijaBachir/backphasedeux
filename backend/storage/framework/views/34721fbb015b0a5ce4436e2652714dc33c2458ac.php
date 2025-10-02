@@ -27,4 +27,4 @@
         <?php endif; ?>
     </nav>
 <?php endif; ?>
-<?php /**PATH C:\Users\Dell\Documents\Modèles Office personnalisés\OneDrive\Bureau\deploiement\PhaseDeux\backend\vendor\laravel\framework\src\Illuminate\Pagination\resources\views\simple-tailwind.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\Users\Dell\Documents\Modèles Office personnalisés\OneDrive\Bureau\back\backphasedeux\backend\vendor\laravel\framework\src\Illuminate\Pagination\resources\views\simple-tailwind.blade.php ENDPATH**/ ?>
