@@ -5,7 +5,6 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
 # Exécuter les migrations Laravel (et forcer si déjà fait)
 echo "Running database migrations..."
-# L'exécutable php est maintenant dans le PATH, donc nous pouvons utiliser 'php' directement
 php artisan migrate --force
 
 # Vérifier si la migration a réussi avant de lancer le serveur
