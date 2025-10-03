@@ -6,7 +6,7 @@ return [
     | Fichiers et chemins autorisés
     |--------------------------------------------------------------------------
     | La liste des chemins d'API qui doivent autoriser les requêtes cross-origin
-    | (CORS). Cela inclut tous les chemins nécessaires pour Sanctum et l'API.
+    | (CORS).
     */
     'paths' => [
         'api/*', 
@@ -23,7 +23,7 @@ return [
     |--------------------------------------------------------------------------
     | Méthodes autorisées
     |--------------------------------------------------------------------------
-    | Les méthodes HTTP autorisées. '*' autorise toutes les méthodes (GET, POST, etc.).
+    | Les méthodes HTTP autorisées. '*' autorise toutes les méthodes.
     */
     'allowed_methods' => ['*'],
 
@@ -31,8 +31,8 @@ return [
     |--------------------------------------------------------------------------
     | Origines autorisées
     |--------------------------------------------------------------------------
-    | C'est la liste des domaines qui sont autorisés à faire des requêtes vers votre API.
-    | Nous ajoutons l'URL de votre frontend Vercel ici.
+    | Liste des domaines autorisés à faire des requêtes vers votre API.
+    | La correction du slash a été appliquée ici.
     */
     'allowed_origins' => [
         // Locaux (pour le développement)
@@ -41,8 +41,9 @@ return [
         'http://localhost:8080',
         'http://127.0.0.1:8080',
         
-        // Domaines de Production/Staging (Vercel)
-        'https://backphasedeux.vercel.app/', 
+        // Domaines de Production (Vercel)
+       
+        'https://backphasedeux.vercel.app', 
     ],
 
     'allowed_origins_patterns' => [],
