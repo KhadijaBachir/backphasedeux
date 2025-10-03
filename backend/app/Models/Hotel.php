@@ -17,7 +17,7 @@ class Hotel extends Model
         'phone',
         'price_per_night',
         'currency',
-        'photo',
+        'photo', // Chemin de stockage relatif
         'user_id'
     ];
 
@@ -26,16 +26,8 @@ class Hotel extends Model
     ];
 
     /**
-     * Relation avec l'utilisateur
-     */
-    public function user()
-    {
-        return $this->belongsTo(User::class, 'user_id');
-    }
-
-    /**
-     * Accessor pour la photo - Version simplifiée
-     * Retourne le chemin relatif, le frontend construira l'URL complète
+     * Accesseur pour 'photo'. Il retourne l'URL publique complète.
+     * Cette URL fonctionnera dans le frontend.
      */
     public function getPhotoAttribute($value)
     {
@@ -43,13 +35,23 @@ class Hotel extends Model
             return null;
         }
         
-        // Retourner le chemin relatif seulement
-        // Le frontend construira l'URL complète
-        return $value;
+        // CORRECTION CLÉ : Utilise asset() pour générer l'URL complète
+        // Ex: https://votre-domaine.onrender.com/storage/hotels/xxxx.png
+        return asset('storage/' . $value);
     }
 
     /**
-     * Get the raw photo path (pour la suppression)
+     * Relation avec l'utilisateur
+     */
+    public function user()
+    {
+        // Assurez-vous que le modèle User est correctement importé ou disponible.
+        // Si vous avez besoin d'importer le modèle User: use App\Models\User;
+        return $this->belongsTo(\App\Models\User::class, 'user_id');
+    }
+
+    /**
+     * Récupère le chemin d'origine stocké en DB pour la suppression (utilisé dans le contrôleur).
      */
     public function getRawPhotoPath()
     {

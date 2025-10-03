@@ -8,14 +8,18 @@ echo "--- Starting service in production mode ---" # AJOUT POUR DEBUG
 php artisan config:clear
 php artisan route:clear
 
+# CRÉATION DU LIEN SYMBOLIQUE (Nécessaire pour l'affichage des photos sur Render)
+echo "Creating public storage link..."
+php artisan storage:link
+
 # Exécuter les migrations Laravel (et forcer si déjà fait)
 echo "Running database migrations..."
 php artisan migrate --force
 
 # Vérifier si la migration a réussi avant de lancer le serveur
 if [ $? -ne 0 ]; then
-  echo "Database migration failed! Exiting."
-  exit 1
+ echo "Database migration failed! Exiting."
+ exit 1
 fi
 
 # Lancer le serveur Apache au premier plan
